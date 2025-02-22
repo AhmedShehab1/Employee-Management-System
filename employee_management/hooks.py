@@ -5,6 +5,17 @@ app_description = "Employee Management System to manage and capture company stru
 app_email = "ashehab.biomedeng@gmail.com"
 app_license = "unlicense"
 
+
+doc_events = {
+    "Department": {
+        "after_insert": "employee_management.department_hooks.update_department_count",
+        "after_delete": "employee_management.department_hooks.update_department_count"
+    },
+    "Employee": {
+        "after_insert": "employee_management.employee_hooks.update_employee_count",
+        "after_delete": "employee_management.employee_hooks.update_employee_count"
+    },
+}
 # Apps
 # ------------------
 
