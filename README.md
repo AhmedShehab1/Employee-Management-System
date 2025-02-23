@@ -2,6 +2,9 @@
 
 Employee Management System to manage and capture company structure and essential employee information.
 
+## Table of Contents
+- [API Documentation](#api-documentation)
+
 ### Installation
 
 You can install this app using the [bench](https://github.com/frappe/bench) CLI:
@@ -20,6 +23,10 @@ This app uses `pre-commit` for code formatting and linting. Please [install pre-
 cd apps/employee_management
 pre-commit install
 ```
+
+## API Documentation
+[![Swagger Docs](https://img.shields.io/badge/Swagger-API%20Docs-blue)](https://ahmedshehab1.github.io/Employee-Management-System/)
+
 
 Pre-commit is configured to use the following tools for checking and formatting your code:
 
