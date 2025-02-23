@@ -1,5 +1,6 @@
 {
  "actions": [],
+ "allow_import": 1,
  "allow_rename": 1,
  "autoname": "format:EMP-{###}",
  "creation": "2025-02-22 15:10:04.155249",
@@ -102,7 +103,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-22 20:30:11.062294",
+ "modified": "2025-02-23 19:09:40.869579",
  "modified_by": "Administrator",
  "module": "Employee Management",
  "name": "Employee",
