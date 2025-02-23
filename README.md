@@ -4,6 +4,7 @@ Employee Management System to manage and capture company structure and essential
 
 ## Table of Contents
 - [API Documentation](#api-documentation)
+- [Assumptions and Considerations](#assumptions-and-considerations)
 
 ### Installation
 
@@ -52,6 +53,16 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 ✔ Comprehensive API Documentation
 
 ✔ Integrated API Documentation with GitHub Pages for Public Access
+
+
+## Assumptions and Considerations
+- Employees **must** belong to a department under the selected company.
+- Employee tenure is calculated **only if hired**.
+- Employees **must** belong to a department under the selected company.
+- Employee tenure is calculated **only if hired**.
+- A department will not be deleted if an employee is associated with it.
+- A company will not be deleted if a department is associated with it.
+
 
 ### License
 
