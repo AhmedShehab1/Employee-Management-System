@@ -6,5 +6,8 @@ frappe.ui.form.on("Company", {
         frm.add_custom_button('Employees', () => {
             frappe.set_route('List', 'Employee', { company: frm.doc.name });
         });
+        frm.add_custom_button('Departments', () => {
+            frappe.set_route('List', 'Department', { company: frm.doc.name });
+        });
 	},
 });
