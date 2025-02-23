@@ -49,6 +49,10 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 
 ✔ Secured API Endpoints
 
+✔ Comprehensive API Documentation
+
+✔ Integrated API Documentation with GitHub Pages for Public Access
+
 ### License
 
 unlicense
