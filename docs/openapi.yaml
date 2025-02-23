@@ -1,0 +1,229 @@
+openapi: 3.0.0
+info:
+  title: API Documentation
+  description: Documentation for the API endpoints
+  version: 1.0.0
+servers:
+  - url: http://development.localhost:8000/api/v2
+tags:
+  - name: Company
+    description: Company Doctype Operations
+  - name: Department
+    description: Department Doctype Operations
+  - name: Employee
+    description: Employee Doctype Operations
+security:
+  - ApiKeyAuth: []
+components:
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+paths:
+  /document/Company:
+    get:
+      summary: Retrieve Company Information
+      tags:
+        - Company
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: fields
+          in: query
+          description: Fields to retrieve (use * for all fields)
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of companies
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        department_count:
+                          type: integer
+                        employee_count:
+                          type: integer
+  /document/Department:
+    get:
+      summary: Retrieve Department Information
+      tags:
+        - Department
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: fields
+          in: query
+          description: Fields to retrieve
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of departments
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        title:
+                          type: string
+                        name1:
+                          type: string
+                        employee_count:
+                          type: integer
+                        company:
+                          type: string
+  /document/Employee:
+    get:
+      summary: Retrieve Employee Information
+      tags:
+        - Employee
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: fields
+          in: query
+          description: Fields to retrieve
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of employees
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name1:
+                          type: string
+                        email:
+                          type: string
+                        mobile_no:
+                          type: string
+                        address:
+                          type: string
+                        position:
+                          type: string
+                        company:
+                          type: string
+                        department:
+                          type: string
+                        status:
+                          type: string
+    post:
+      summary: Add a New Employee
+      tags:
+        - Employee
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name1:
+                  type: string
+                email:
+                  type: string
+                mobile_no:
+                  type: string
+                address:
+                  type: string
+                position:
+                  type: string
+                company:
+                  type: string
+                department:
+                  type: string
+      responses:
+        '200':
+          description: Employee added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+
+  /document/Employee/{employee_id}:
+    patch:
+      summary: Update an Employee
+      tags:
+        - Employee
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: employee_id
+          in: path
+          required: true
+          description: Employee ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+      responses:
+        '200':
+          description: Employee updated successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      employee_id:
+                        type: string
+                      email:
+                        type: string
+
+    delete:
+      summary: Delete an Employee
+      tags:
+        - Employee
+      security:
+        - ApiKeyAuth: []
+      parameters:
+        - name: employee_id
+          in: path
+          required: true
+          description: Employee ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Employee deleted successfully
+        '404':
+          description: Employee not found
