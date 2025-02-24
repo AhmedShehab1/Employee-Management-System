@@ -78,6 +78,7 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 
 ✔ Integrated API Documentation with GitHub Pages for Public Access
 
+✔ Implemented Role-Based Access Control (RBAC)
 
 ## Assumptions and Considerations
 - Employees **must** belong to a department under the selected company.
