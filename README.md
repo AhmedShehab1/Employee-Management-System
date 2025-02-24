@@ -3,8 +3,13 @@
 Employee Management System to manage and capture company structure and essential employee information.
 
 ## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
 - [API Documentation](#api-documentation)
 - [Assumptions and Considerations](#assumptions-and-considerations)
+
+## Overview
+This **Employee Management System** is built using **Frappe** for backend logic and **Vue.js** for frontend interaction. It enables users to manage companies, departments, and employees while enforcing business logic and validations. The system includes **role-based access control (RBAC)** and a workflow for handling employee onboarding.
 
 ### Installation
 
@@ -15,6 +20,25 @@ cd $PATH_TO_YOUR_BENCH
 bench get-app $URL_OF_THIS_REPO --branch develop
 bench install-app employee_management
 ```
+## Features
+### Backend (Frappe)
+#### Models:
+- **User Accounts**: User Name, Email Address (Login ID), Role
+
+- **Company**: Company Name, Number of Departments, Number of Employees
+
+- **Department**: Company (Select), Department Name, Number of Employees
+
+- **Employee**: Company (Select), Department (Select - dynamically filtered), Employee Status (via workflow), Employee Name, Email, Mobile, Address, Designation, Hired On, Days Employed
+
+#### Business Logic & Validations:
+- Required fields validation
+- Email & mobile format validation
+- Auto-calculate number of departments and employees
+- Auto-calculate employee tenure (Days Employed)
+- Restrict department selection to the selected company
+- Handle cascading deletions (prevent deletion if dependencies exist)
+- Proper error handling with clear messages
 
 ### Contributing
 
@@ -54,6 +78,7 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 
 ✔ Integrated API Documentation with GitHub Pages for Public Access
 
+✔ Implemented Role-Based Access Control (RBAC)
 
 ## Assumptions and Considerations
 - Employees **must** belong to a department under the selected company.
