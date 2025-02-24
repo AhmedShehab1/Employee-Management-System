@@ -1,21 +1,32 @@
 app_name = "employee_management"
 app_title = "Employee Management"
 app_publisher = "Ahmed Shehab"
-app_description = "Employee Management System to manage and capture company structure and essential employee information."
+app_description = (
+	"Employee Management System to manage and capture company structure and essential employee information."
+)
 app_email = "ashehab.biomedeng@gmail.com"
 app_license = "unlicense"
 
 
 doc_events = {
-    "Department": {
-        "after_insert": "employee_management.department_hooks.update_department_count",
-        "after_delete": "employee_management.department_hooks.update_department_count"
-    },
-    "Employee": {
-        "after_insert": "employee_management.employee_hooks.update_employee_count",
-        "after_delete": "employee_management.employee_hooks.update_employee_count"
-    },
+	"Department": {
+		"after_insert": "employee_management.department_hooks.update_department_count",
+		"after_delete": "employee_management.department_hooks.update_department_count",
+	},
+	"Employee": {
+		"after_insert": "employee_management.employee_hooks.update_employee_count",
+		"after_delete": "employee_management.employee_hooks.update_employee_count",
+	},
 }
+
+permission_query_conditions = {
+	"Employee": "employee_management.employee_hooks.get_permission_query_conditions"
+}
+
+# has_permission = {
+#     "Employee": "employee_management.employee_hooks.has_permission"
+# }
+
 # Apps
 # ------------------
 
@@ -255,4 +266,3 @@ doc_events = {
 # default_log_clearing_doctypes = {
 # 	"Logging DocType Name": 30  # days to retain logs
 # }
-
