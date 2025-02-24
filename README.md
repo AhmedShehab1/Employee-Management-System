@@ -3,9 +3,13 @@
 Employee Management System to manage and capture company structure and essential employee information.
 
 ## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
 - [API Documentation](#api-documentation)
 - [Assumptions and Considerations](#assumptions-and-considerations)
-- [Features](#features)
+
+## Overview
+This **Employee Management System** is built using **Frappe** for backend logic and **Vue.js** for frontend interaction. It enables users to manage companies, departments, and employees while enforcing business logic and validations. The system includes **role-based access control (RBAC)** and a workflow for handling employee onboarding.
 
 ### Installation
 
