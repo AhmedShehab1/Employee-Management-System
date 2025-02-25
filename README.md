@@ -44,8 +44,8 @@ bench install-app employee_management
 
 ## Security Measures
 - **Role-Based Access Control (RBAC):**
-  - Admin: Full control
-  - HR: Manage employees and workflows
+  - Administrator: Full control
+  - Manager: Manage employees and workflows
   - Employees: View their own records
 - **Validation & Error Handling:**
   - Proper input validation (emails, phone numbers, required fields)
