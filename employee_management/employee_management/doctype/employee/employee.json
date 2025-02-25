@@ -18,7 +18,8 @@
   "title",
   "status",
   "hired_on",
-  "days_employed"
+  "days_employed",
+  "workflow_state"
  ],
  "fields": [
   {
@@ -81,11 +82,12 @@
    "read_only": 1
   },
   {
-   "default": "Onboarding",
+   "default": "Application Received",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Onboarding\nActive\nRejected"
+   "options": "Application Received\nInterview Scheduled\nHired\nNot Accepted",
+   "read_only": 1
   },
   {
    "fieldname": "hired_on",
@@ -98,12 +100,19 @@
    "fieldtype": "Int",
    "label": "Days Employed",
    "read_only": 1
+  },
+  {
+   "fieldname": "workflow_state",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Workflow State",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-24 21:42:01.691660",
+ "modified": "2025-02-25 21:35:22.156806",
  "modified_by": "Administrator",
  "module": "Employee Management",
  "name": "Employee",
@@ -149,16 +158,20 @@
  "sort_order": "DESC",
  "states": [
   {
-   "color": "Red",
-   "title": "Rejected"
+   "color": "Yellow",
+   "title": "Application Received"
   },
   {
    "color": "Blue",
-   "title": "Onboarding"
+   "title": "Interview Scheduled"
   },
   {
    "color": "Green",
-   "title": "Active"
+   "title": "Hired"
+  },
+  {
+   "color": "Red",
+   "title": "Not Accepted"
   }
  ],
  "title_field": "title"
