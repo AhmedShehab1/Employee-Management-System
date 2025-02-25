@@ -80,6 +80,8 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 
 ✔ Implemented Role-Based Access Control (RBAC)
 
+✔ Implemented Employee Onboarding Workflow
+
 ## Assumptions and Considerations
 - Employees **must** belong to a department under the selected company.
 - Employee tenure is calculated **only if hired**.
