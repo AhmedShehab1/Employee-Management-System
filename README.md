@@ -7,6 +7,7 @@ Employee Management System to manage and capture company structure and essential
 - [Features](#features)
 - [API Documentation](#api-documentation)
 - [Assumptions and Considerations](#assumptions-and-considerations)
+- [Security Measures](#security-measures)
 
 ## Overview
 This **Employee Management System** is built using **Frappe** for backend logic and **Vue.js** for frontend interaction. It enables users to manage companies, departments, and employees while enforcing business logic and validations. The system includes **role-based access control (RBAC)** and a workflow for handling employee onboarding.
@@ -39,6 +40,16 @@ bench install-app employee_management
 - Restrict department selection to the selected company
 - Handle cascading deletions (prevent deletion if dependencies exist)
 - Proper error handling with clear messages
+
+
+## Security Measures
+- **Role-Based Access Control (RBAC):**
+  - Admin: Full control
+  - HR: Manage employees and workflows
+  - Employees: View their own records
+- **Validation & Error Handling:**
+  - Proper input validation (emails, phone numbers, required fields)
+  - Prevent unauthorized API access
 
 ### Contributing
 
