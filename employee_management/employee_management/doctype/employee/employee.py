@@ -16,7 +16,7 @@ class Employee(Document):
 			if not self.hired_on:
 				self.hired_on = datetime.today().date()
 
-			if not isinstance(self.hired_on, datetime):
+			if isinstance(self.hired_on, str):
 				self.hired_on = datetime.strptime(self.hired_on, "%Y-%m-%d").date()
 
 			self.days_employed = (datetime.today().date() - self.hired_on).days
