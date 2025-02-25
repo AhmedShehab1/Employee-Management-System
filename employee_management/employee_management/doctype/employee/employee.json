@@ -81,11 +81,11 @@
    "read_only": 1
   },
   {
-   "default": "Onboarding",
+   "default": "Application Received",
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Onboarding\nActive\nRejected"
+   "options": "Application Received\nInterview Scheduled\nHired\nNot Accepted"
   },
   {
    "fieldname": "hired_on",
@@ -103,7 +103,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-24 21:42:01.691660",
+ "modified": "2025-02-25 20:24:58.581836",
  "modified_by": "Administrator",
  "module": "Employee Management",
  "name": "Employee",
