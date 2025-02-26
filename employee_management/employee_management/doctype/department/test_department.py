@@ -21,7 +21,6 @@ class UnitTestDepartment(UnitTestCase):
 		"""
 		Create test records before running the tests
 		"""
-		print("ran setUp")
 		self.company = frappe.new_doc("Company")
 		self.company.name1 = "Test Company"
 		self.company.save()
@@ -44,7 +43,6 @@ class UnitTestDepartment(UnitTestCase):
 		"""
 		Delete test records created as part of the tests
 		"""
-		print("ran tearDown")
 		self.employee.delete()
 		self.department.delete()
 		self.company.delete()
@@ -53,11 +51,9 @@ class UnitTestDepartment(UnitTestCase):
 		"""
 		Test the title of the department
 		"""
-		print("ran test_title")
 		self.assertEqual(self.department.title, f"{self.department.name1} - {self.department.company}")
 
 	def test_number_of_employees(self):
-		print("ran test_number_of_employees")
 		"""
 		Test the number of employees in the department
 		"""
