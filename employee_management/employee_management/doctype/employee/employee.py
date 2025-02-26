@@ -3,15 +3,20 @@
 
 from datetime import datetime
 
-import frappe
 from frappe.model.document import Document
 
 
 class Employee(Document):
 	def before_save(self):
+		"""
+		Set the title of the employee
+		"""
 		self.title = f"{self.name1} - {self.department}, {self.company}"
 
 	def on_update(self):
+		"""
+		Automatically calculate the days employed when the employee is hired
+		"""
 		if self.status == "Hired":
 			if not self.hired_on:
 				self.hired_on = datetime.today().date()

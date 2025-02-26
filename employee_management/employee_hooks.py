@@ -2,6 +2,9 @@ import frappe
 
 
 def update_employee_count(doc, method):
+	"""
+	Update the employee count in the company and department doctype
+	"""
 	company = frappe.get_doc("Company", doc.company)
 	dep = frappe.get_doc("Department", doc.department)
 	comp_emp_count = frappe.db.count("Employee", {"company": company})
@@ -11,6 +14,9 @@ def update_employee_count(doc, method):
 
 
 def get_permission_query_conditions(user):
+	"""
+	Only show the employee's own record to the employee
+	"""
 	if not user:
 		return ""
 
@@ -18,9 +24,3 @@ def get_permission_query_conditions(user):
 		return f"`tabEmployee`.email = '{user}'"
 
 	return ""
-
-
-# def has_permission(doc, user):
-#     if 'Employee' in frappe.get_roles(user):
-#         return doc.email == user
-#     return True
