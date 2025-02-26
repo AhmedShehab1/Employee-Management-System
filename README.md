@@ -8,6 +8,7 @@ Employee Management System to manage and capture company structure and essential
 - [API Documentation](#api-documentation)
 - [Assumptions and Considerations](#assumptions-and-considerations)
 - [Security Measures](#security-measures)
+- [Screenshots & Media](#screenshots-and-media)
 
 ## Overview
 This **Employee Management System** is built using **Frappe** for backend logic and **Vue.js** for frontend interaction. It enables users to manage companies, departments, and employees while enforcing business logic and validations. The system includes **role-based access control (RBAC)** and a workflow for handling employee onboarding.
@@ -42,14 +43,6 @@ bench install-app employee_management
 - Proper error handling with clear messages
 
 
-## Security Measures
-- **Role-Based Access Control (RBAC):**
-  - Administrator: Full control
-  - Manager: Manage employees and workflows
-  - Employees: View their own records
-- **Validation & Error Handling:**
-  - Proper input validation (emails, phone numbers, required fields)
-  - Prevent unauthorized API access
 
 ### Contributing
 
@@ -93,6 +86,8 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 
 ✔ Implemented Employee Onboarding Workflow
 
+✔ Implemented a summary dashboard to show simple analytics of Companies and Employees of the organization
+
 ## Assumptions and Considerations
 - Employees **must** belong to a department under the selected company.
 - Employee tenure is calculated **only if hired**.
@@ -100,6 +95,22 @@ This app can use GitHub Actions for CI. The following workflows are configured:
 - Employee tenure is calculated **only if hired**.
 - A department will not be deleted if an employee is associated with it.
 - A company will not be deleted if a department is associated with it.
+
+## Security Measures
+- **Role-Based Access Control (RBAC):**
+  - Administrator: Full control
+  - Manager: Manage employees and workflows
+  - Employees: View their own records
+- **Validation & Error Handling:**
+  - Proper input validation (emails, phone numbers, required fields)
+  - Prevent unauthorized API access
+
+## Screenshots and Media
+
+### Onboarding Process of New Employees Workflow
+
+![Employee_Workflow](./imgs/employee_workflow.png)
+Figure 1: Employee Workflow
 
 
 ### License
