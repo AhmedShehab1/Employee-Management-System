@@ -18,3 +18,7 @@ class Department(Document):
 		"""
 		if frappe.db.exists("Employee", {"department": self.name}):
 			frappe.throw("Cannot delete department, Employees are assigned to this department")
+
+	@property
+	def employee_count(self):
+		return frappe.db.count("Employee", {"department": self.name})

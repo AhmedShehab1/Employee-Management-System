@@ -14,3 +14,11 @@ class Company(Document):
 			frappe.throw("Cannot delete company, Departments are assigned to this company")
 		if frappe.db.exists("Employee", {"company": self.name}):
 			frappe.throw("Cannot delete company, Employees are assigned to this company")
+
+	@property
+	def department_count(self):
+		return frappe.db.count("Department", {"company": self.name})
+
+	@property
+	def employee_count(self):
+		return frappe.db.count("Employee", {"company": self.name})

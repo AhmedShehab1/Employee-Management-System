@@ -30,6 +30,7 @@
   {
    "fieldname": "employee_count",
    "fieldtype": "Int",
+   "is_virtual": 1,
    "label": "Employee Count",
    "non_negative": 1,
    "read_only": 1
@@ -44,7 +45,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-02-23 19:06:59.257871",
+ "modified": "2025-03-05 21:11:18.375383",
  "modified_by": "Administrator",
  "module": "Employee Management",
  "name": "Department",

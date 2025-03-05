@@ -20,11 +20,11 @@ class Employee(Document):
 		if self.status == "Hired":
 			if not self.hired_on:
 				self.hired_on = datetime.today().date()
-
-			if isinstance(self.hired_on, str):
-				self.hired_on = datetime.strptime(self.hired_on, "%Y-%m-%d").date()
-
-			self.days_employed = (datetime.today().date() - self.hired_on).days
 		else:
-			self.days_employed = None
 			self.hired_on = None
+
+	@property
+	def days_employed(self):
+		if self.hired_on:
+			return (datetime.today().date() - self.hired_on).days
+		return None
